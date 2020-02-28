@@ -1,4 +1,4 @@
-package internship.marsplay;
+package internship.marsplay.service.model;
 
 import com.google.gson.annotations.SerializedName;
 

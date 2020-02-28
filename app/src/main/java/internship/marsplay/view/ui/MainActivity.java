@@ -1,4 +1,4 @@
-package internship.marsplay;
+package internship.marsplay.view.ui;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
@@ -33,6 +33,7 @@ import com.airbnb.lottie.LottieAnimationView;
 
 import org.json.JSONObject;
 
+import internship.marsplay.R;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -56,6 +57,12 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
+        getSupportActionBar().setLogo(R.drawable.marsplay);
+        getSupportActionBar().setDisplayUseLogoEnabled(true);
+
         frameLayout = findViewById(R.id.main_framelayout);
         loader_layout = findViewById(R.id.loader_layout);
         swipeRefreshLayout = findViewById(R.id.loader_swiperefresh);
@@ -74,7 +81,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        gotoFragment(new JournalListFragment(), JOURNAL_LIST_FRAGMENT);
     }
 
     private boolean isNetworkAvailable() {
@@ -90,7 +96,7 @@ public class MainActivity extends AppCompatActivity {
             frameLayout.setVisibility(View.VISIBLE);
             loader_layout.setVisibility(View.GONE);
             swipeRefreshLayout.setVisibility(View.GONE);
-            setFragment(new JournalListFragment(), JOURNAL_LIST_FRAGMENT);
+            gotoFragment(new JournalListFragment(), JOURNAL_LIST_FRAGMENT);
         }else{
             error_loader.setProgress(0);
             error_loader.addAnimatorListener(new AnimatorListenerAdapter() {

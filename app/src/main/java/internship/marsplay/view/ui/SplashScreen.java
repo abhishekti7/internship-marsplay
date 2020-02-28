@@ -1,4 +1,4 @@
-package internship.marsplay;
+package internship.marsplay.view.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -10,6 +10,8 @@ import android.os.Handler;
 import android.view.WindowManager;
 
 import com.airbnb.lottie.LottieAnimationView;
+
+import internship.marsplay.R;
 
 public class SplashScreen extends AppCompatActivity {
 
@@ -37,6 +39,7 @@ public class SplashScreen extends AppCompatActivity {
             public void run() {
                 Intent homeIntent = new Intent(SplashScreen.this, MainActivity.class);
                 startActivity(homeIntent);
+                finish();
             }
         },1000);
     }

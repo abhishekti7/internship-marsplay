@@ -88,7 +88,7 @@
                     android:id="@+id/tv_folded_abstract"
                     android:layout_width="match_parent"
                     android:layout_height="350dp"
-                    android:minHeight="300dp"
+                    android:minHeight="350dp"
                     android:textColor="@color/white"
                     android:padding="10dp"
                     android:ellipsize="end"
@@ -164,6 +164,8 @@
                             android:layout_height="wrap_content"
                             android:text="AUTHORS"
                             android:maxLines="4"
+                            android:textSize="12sp"
+                            android:textStyle="italic"
                             android:ellipsize="end"
                             android:textColor="@color/white" />
                     </LinearLayout>
@@ -180,8 +182,8 @@
                 <TextView
                     android:id="@+id/tv_abstract"
                     android:layout_width="match_parent"
-                    android:layout_height="100dp"
-                    android:maxLines="4"
+                    android:layout_height="80dp"
+                    android:maxLines="2"
                     android:ellipsize="end"
                     android:padding="10dp"
                     android:textColor="@color/white"

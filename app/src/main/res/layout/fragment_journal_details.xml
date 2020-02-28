@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     android:layout_width="match_parent"
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:background="@color/colorPrimary">
+    android:background="@color/white">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -194,6 +194,55 @@
                     android:textColor="@color/theme_color2"
                     android:background="@color/white"
                     android:text="@string/dummy_text" />
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <Button
+                        android:id="@+id/btn_read"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="READ FULL JOURNAL"
+                        android:textColor="@color/colorPrimary"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginRight="10dp"/>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingBottom="10dp"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="10dp"
+                        android:orientation="horizontal">
+                        <Button
+                            android:id="@+id/btn_download"
+                            android:text="DOWNLOAD"
+                            android:layout_weight="1"
+                            android:textColor="@color/colorPrimary"
+                            android:layout_width="match_parent"
+                            android:layout_marginRight="5dp"
+                            android:layout_height="match_parent" />
+                        <Button
+                            android:id="@+id/bnt_bookmark"
+                            android:text="BOOKMARK"
+                            android:textColor="@color/colorPrimary"
+                            android:layout_weight="1"
+                            android:layout_marginLeft="5dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent" />
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+
             </androidx.cardview.widget.CardView>
         </LinearLayout>
     </ScrollView>

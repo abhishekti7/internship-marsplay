@@ -1,8 +1,9 @@
-package internship.marsplay;
+package internship.marsplay.view.adapters;
 
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.AnimationUtils;
@@ -10,6 +11,7 @@ import android.widget.Filter;
 import android.widget.Filterable;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.PopupMenu;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -23,6 +25,10 @@ import com.ramotion.foldingcell.FoldingCell;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import internship.marsplay.R;
+import internship.marsplay.service.model.Journal;
+import internship.marsplay.view.ui.JournalDetailsFragment;
 
 public class JournalListAdapter extends RecyclerView.Adapter<JournalListAdapter.ViewHolder> implements Filterable {
 
@@ -205,6 +211,31 @@ public class JournalListAdapter extends RecyclerView.Adapter<JournalListAdapter.
                             .setCustomAnimations(R.anim.right_enter, R.anim.left_out)
                             .replace(R.id.main_framelayout, fragment)
                             .addToBackStack(null).commit();
+                }
+            });
+
+            btn_options.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    PopupMenu popupMenu = new PopupMenu(itemView.getContext(), btn_options);
+                    popupMenu.getMenuInflater().inflate(R.menu.dropdown,popupMenu.getMenu());
+                    popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+                        public boolean onMenuItemClick(MenuItem item) {
+                            if(item.getItemId()==R.id.btn_details){
+                                AppCompatActivity appCompatActivity = (AppCompatActivity)itemView.getContext();
+                                Fragment fragment = new JournalDetailsFragment();
+                                fragment.setArguments(args);//send pid of selected patient
+                                appCompatActivity.getSupportFragmentManager()
+                                        .beginTransaction()
+                                        .setCustomAnimations(R.anim.right_enter, R.anim.left_out)
+                                        .replace(R.id.main_framelayout, fragment)
+                                        .addToBackStack(null).commit();
+                            }
+                            return true;
+                        }
+                    });
+
+                    popupMenu.show();
                 }
             });
         }

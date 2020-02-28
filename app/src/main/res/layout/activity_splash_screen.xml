@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/splashscreen_background"
+    android:background="@color/white"
     tools:context=".SplashScreen">
 
     <ImageView
@@ -28,7 +28,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView"
         app:lottie_autoPlay="true"
-        app:lottie_fileName="spinner.json"
+        app:lottie_fileName="splash_spinner.json"
         app:lottie_loop="true" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

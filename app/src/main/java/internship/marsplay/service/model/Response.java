@@ -1,8 +1,10 @@
-package internship.marsplay;
+package internship.marsplay.service.model;
 
 import com.google.gson.annotations.SerializedName;
 
 import java.util.List;
+
+import internship.marsplay.service.model.Journal;
 
 public class Response {
 
