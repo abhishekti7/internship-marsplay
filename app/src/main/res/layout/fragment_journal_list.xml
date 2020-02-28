@@ -10,11 +10,11 @@
         android:layout_height="match_parent"
         android:layout_margin="5dp"
         android:background="@color/white"
+        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:visibility="gone">
+        app:layout_constraintTop_toTopOf="parent">
 
         <com.airbnb.lottie.LottieAnimationView
             android:id="@+id/screen1_loader"
@@ -54,8 +54,7 @@
                 android:id="@+id/journal_recyclerview"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@color/recycler_view_background">
-            </androidx.recyclerview.widget.RecyclerView>
+                android:background="@color/recycler_view_background"></androidx.recyclerview.widget.RecyclerView>
         </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -5,6 +5,7 @@ import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.app.Activity;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -69,7 +70,14 @@ public class JournalListFragment extends Fragment {
 
         loader_layout.setVisibility(View.VISIBLE);
         journal_list_layout.setVisibility(View.GONE);
-        viewModel();
+
+        Handler handler = new Handler();
+        Runnable r = new Runnable() {
+            public void run() {
+                viewModel();
+            }
+        };
+        handler.postDelayed(r, 1000);
 
         swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
@@ -107,4 +115,5 @@ public class JournalListFragment extends Fragment {
         loader_layout.setVisibility(View.GONE);
         journal_list_layout.setVisibility(View.VISIBLE);
     }
+
 }

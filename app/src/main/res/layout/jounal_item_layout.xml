@@ -138,7 +138,7 @@
                             android:text="5.66"
                             android:textAlignment="center"
                             android:textColor="@color/white"
-                            android:textSize="40sp" />
+                            android:textSize="30sp" />
                     </LinearLayout>
 
                     <LinearLayout
@@ -156,7 +156,7 @@
                             android:maxLines="4"
                             android:ellipsize="end"
                             android:textColor="@color/white"
-                            android:textSize="18sp" />
+                            android:textSize="16sp" />
 
                         <TextView
                             android:id="@+id/tv_author"
