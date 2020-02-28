@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/layout_journals"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="10dp">
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clipChildren="false"
+        android:clipToPadding="false"
+        android:padding="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.ramotion.foldingcell.FoldingCell
+            xmlns:folding-cell="http://schemas.android.com/apk/res-auto"
+            folding-cell:backSideColor="@color/theme_color1"
+            folding-cell:cameraHeight="30"
+            folding-cell:animationDuration="1000"
+            android:id="@+id/folding_cell"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/theme_color2">
+
+            <LinearLayout
+                android:id="@+id/cell_content_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="10dp"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="200dp"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tv_folded_title"
+                        android:text="TITLE"
+                        android:textColor="@color/white"
+                        android:padding="10dp"
+                        android:layout_marginTop="5dp"
+                        android:background="@drawable/tv_background"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:id="@+id/tv_folded_authors"
+                        android:text="Authors"
+                        android:textColor="@color/white"
+                        android:padding="10dp"
+                        android:layout_marginTop="5dp"
+                        android:background="@drawable/tv_background"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:id="@+id/tv_folded_date"
+                        android:text="Published On"
+                        android:textColor="@color/white"
+                        android:padding="10dp"
+                        android:layout_marginTop="5dp"
+                        android:background="@drawable/tv_background"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:id="@+id/tv_folded_type"
+                        android:text="Article Type"
+                        android:textColor="@color/white"
+                        android:padding="10dp"
+                        android:layout_marginTop="5dp"
+                        android:background="@drawable/tv_background"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tv_folded_abstract"
+                    android:layout_width="match_parent"
+                    android:layout_height="350dp"
+                    android:minHeight="300dp"
+                    android:textColor="@color/white"
+                    android:padding="10dp"
+                    android:ellipsize="end"
+                    android:text="@string/dummy_text" />
+                <TextView
+                    android:id="@+id/btn_more"
+                    android:text="Read More..."
+                    android:textColor="@color/white"
+                    android:padding="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/cell_title_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="5dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="SCORE"
+                            android:textColor="@color/white"/>
+
+                        <TextView
+                            android:id="@+id/tv_score"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="5.66"
+                            android:textAlignment="center"
+                            android:textColor="@color/white"
+                            android:textSize="40sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:padding="10dp">
+
+                        <TextView
+                            android:id="@+id/tv_title"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="TITLE OF JOURNAL"
+                            android:maxLines="4"
+                            android:ellipsize="end"
+                            android:textColor="@color/white"
+                            android:textSize="18sp" />
+
+                        <TextView
+                            android:id="@+id/tv_author"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="AUTHORS"
+                            android:maxLines="4"
+                            android:ellipsize="end"
+                            android:textColor="@color/white" />
+                    </LinearLayout>
+
+                    <ImageView
+                        android:id="@+id/btn_options"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_gravity="top"
+                        android:layout_weight="0.2"
+                        android:src="@drawable/more" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tv_abstract"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:maxLines="4"
+                    android:ellipsize="end"
+                    android:padding="10dp"
+                    android:textColor="@color/white"
+                    android:text="@string/dummy_text" />
+            </LinearLayout>
+            ​
+        </com.ramotion.foldingcell.FoldingCell>
+
+    </androidx.cardview.widget.CardView>
+</androidx.constraintlayout.widget.ConstraintLayout>
