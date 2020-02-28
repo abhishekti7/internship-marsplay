@@ -74,7 +74,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        gotoFragment("MARSPLAY",new JournalListFragment(), JOURNAL_LIST_FRAGMENT);
+        gotoFragment(new JournalListFragment(), JOURNAL_LIST_FRAGMENT);
     }
 
     private boolean isNetworkAvailable() {
@@ -104,10 +104,11 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    public void gotoFragment(String title, Fragment fragment, int fragment_no){
+    public void gotoFragment(Fragment fragment, int fragment_no){
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
         getSupportActionBar().setLogo(R.drawable.marsplay);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(false);
+        getSupportActionBar().setDisplayUseLogoEnabled(true);
         invalidateOptionsMenu();
         setFragment(fragment, fragment_no);
     }
