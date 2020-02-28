@@ -1,6 +1,7 @@
 package internship.marsplay.view.adapters;
 
 import android.app.Activity;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
@@ -15,6 +16,7 @@ import android.widget.PopupMenu;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 import androidx.constraintlayout.widget.ConstraintLayout;
@@ -169,6 +171,7 @@ public class JournalListAdapter extends RecyclerView.Adapter<JournalListAdapter.
 
 
             itemView.setOnClickListener(new View.OnClickListener() {
+                @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
                 @Override
                 public void onClick(View view) {
                     counter++;
